@@ -1,7 +1,12 @@
-import React from 'react';
-import '../styles/ProductCard.css';
+import React from "react";
+import { useCart } from "../context/CartContext";
+import "../Styles/ProductCard.css";
 
-function ProductCard({ product, onAddToCart }) {
+function ProductCard({ product }) {
+
+  const { addToCart } = useCart();
+
+
   return (
     <div className="product-card">
       <div className="product-image-container">
@@ -27,7 +32,7 @@ function ProductCard({ product, onAddToCart }) {
         </div>
         <button
           className="add-to-cart-btn"
-          onClick={() => onAddToCart(product)}
+          onClick={() => addToCart(product)}
         >
           Add to Cart
         </button>

@@ -1,8 +1,10 @@
-import React from 'react';
-import ProductCard from './productCard';
-import '../styles/ProductList.css';
+import React from "react";
+import ProductCard from "./ProductCard";
+import "../Styles/ProductList.css";
 
-function ProductList({ products, onAddToCart }) {
+function ProductList({ products }) {
+
+
   return (
     <div className="product-list">
       <h2 className="section-title">Our Products</h2>
@@ -11,7 +13,7 @@ function ProductList({ products, onAddToCart }) {
           <ProductCard
             key={product.id}
             product={product}
-            onAddToCart={onAddToCart}
+            
           />
         ))}
       </div>
