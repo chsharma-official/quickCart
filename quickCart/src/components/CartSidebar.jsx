@@ -1,24 +1,28 @@
-import React from 'react';
-import '../styles/CartSidebar.css';
+import React from "react";
+import { useCart } from "../context/CartContext";
+import "../Styles/CartSidebar.css";
 
-function CartSidebar({ isOpen, onClose, cart, onUpdateQuantity, onRemoveItem }) {
+function CartSidebar() {
 
-  const calculateTotal = () => {
-    return cart.reduce(
-      (total, item) => total + (item.price * item.quantity),
-      0
-    );
-  };
+  const {
+    cart,
+    isCartOpen,
+    toggleCart,
+    updateQuantity,
+    removeFromCart,
+    getTotalPrice
+  } = useCart();
+
 
   return (
 
-    <div className={`cart-sidebar ${isOpen ? 'open' : ''}`}>
+    <div className={`cart-sidebar ${isCartOpen ? "open" : ""}`}>
 
       <div className="cart-header">
         <h2>Your Cart</h2>
 
         <button
-          onClick={onClose}
+          onClick={toggleCart}
           className="close-btn"
         >
           ✕
@@ -62,7 +66,7 @@ function CartSidebar({ isOpen, onClose, cart, onUpdateQuantity, onRemoveItem }) 
 
                 <button
                   onClick={() =>
-                    onUpdateQuantity(
+                    updateQuantity(
                       item.id,
                       item.quantity - 1
                     )
@@ -77,7 +81,7 @@ function CartSidebar({ isOpen, onClose, cart, onUpdateQuantity, onRemoveItem }) 
 
                 <button
                   onClick={() =>
-                    onUpdateQuantity(
+                    updateQuantity(
                       item.id,
                       item.quantity + 1
                     )
@@ -90,7 +94,7 @@ function CartSidebar({ isOpen, onClose, cart, onUpdateQuantity, onRemoveItem }) 
 
               <button
                 onClick={() =>
-                  onRemoveItem(item.id)
+                  removeFromCart(item.id)
                 }
                 className="remove-btn"
               >
@@ -114,7 +118,7 @@ function CartSidebar({ isOpen, onClose, cart, onUpdateQuantity, onRemoveItem }) 
             <span>Total:</span>
 
             <span>
-              ${calculateTotal().toFixed(2)}
+              ${getTotalPrice().toFixed(2)}
             </span>
 
           </div>

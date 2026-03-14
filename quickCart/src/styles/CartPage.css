@@ -1,0 +1,27 @@
+.cart-page{
+max-width:900px;
+margin:auto;
+padding:30px;
+}
+
+.cart-page-item{
+display:flex;
+gap:20px;
+align-items:center;
+margin-bottom:20px;
+padding:15px;
+background:white;
+border-radius:10px;
+box-shadow:0 2px 6px rgba(0,0,0,0.1);
+}
+
+.cart-page-item img{
+width:90px;
+height:90px;
+object-fit:cover;
+border-radius:8px;
+}
+
+.cart-page-item button{
+margin:5px;
+}

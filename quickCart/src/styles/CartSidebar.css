@@ -46,3 +46,29 @@ display:flex;
 justify-content:space-between;
 font-weight:600;
 }
+.cart-header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px;
+border-bottom:1px solid #ddd;
+}
+
+.cart-item{
+display:flex;
+align-items:center;
+gap:10px;
+margin-bottom:15px;
+background:#f9f9f9;
+padding:10px;
+border-radius:8px;
+}
+
+.cart-item-details{
+flex:1;
+}
+
+.quantity-controls button{
+padding:6px 10px;
+margin:0 3px;
+}

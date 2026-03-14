@@ -17,7 +17,7 @@ export const products = [
   },
   {
     id: 3,
-    name: "Laptop Stand",
+    name: "Mouse",
     price: 49.99,
     image: "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=400&h=400&fit=crop",
     description: "Ergonomic aluminum laptop stand for better posture",
